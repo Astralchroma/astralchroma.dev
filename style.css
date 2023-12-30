@@ -45,50 +45,12 @@ main {
 }
 
 section {
-	position: relative;
-	transform-style: preserve-3d;
-
 	background: #FFFFFF08;
 	backdrop-filter: blur(2px);
 	padding: 8px;
 	border-radius: 8px;
-}
-
-section .shadow {
-	position: absolute;
-	inset: -8px;
-	border: 8px solid #0000;
-	border-radius: 24px;
-	mask: linear-gradient(#000 0, #000 0) content-box, linear-gradient(#000 0, #000 0);
-	mask-composite: exclude;
-	transform: translateZ(-1px);
-	pointer-events: none;
-}
-
-@property --angle {
-	syntax: "<angle>";
-	inherits: true;
-	initial-value: 0;
-}
-
-section .shadow::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	border-radius: 16px;
-	background: conic-gradient(
-		from var(--angle),
-		hsl(360, 100%, 50%),
-		hsl(315, 100%, 50%),
-		hsl(270, 100%, 50%),
-		hsl(225, 100%, 50%),
-		hsl(180, 100%, 50%),
-		hsl(135, 100%, 50%),
-		hsl(90, 100%, 50%),
-		hsl(45, 100%, 50%),
-		hsl(0, 100%, 50%)
-	);
-	filter: blur(4px);
+	box-shadow: 0 0 16px #0000FF3F;
+	border: 1px solid #00007F3F;
 }
 
 h1 {
