@@ -47,7 +47,7 @@ main {
 section {
 	background: #FFFFFF08;
 	backdrop-filter: blur(2px);
-	padding: 8px;
+	padding: 16px;
 	border-radius: 8px;
 	box-shadow: 0 0 16px #0000FF3F;
 	border: 1px solid #00007F3F;
@@ -55,6 +55,11 @@ section {
 
 h1 {
 	text-align: center;
+	margin-top: 0;
+}
+
+p {
+	margin: 0;
 }
 
 #accounts {
@@ -76,6 +81,7 @@ h1 {
 
 h3 {
 	display: inline-block;
+	margin-top: 0;
 }
 
 .green-tag,.orange-tag,.blue-tag,.red-tag,.gray-tag {
@@ -118,6 +124,7 @@ footer {
 	display: grid;
 	justify-items: center;
 	align-items: center;
+	gap: 32px;
 }
 
 #credit * {
