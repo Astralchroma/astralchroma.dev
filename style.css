@@ -1,5 +1,59 @@
-body {
-	margin: 0;
-	min-height: 100vh;
+@font-face {
+	font-family: "Exo 2";
+	src: url("exo_2.ttf");
+}
+
+@font-face {
+	font-family: "Exo 2";
+	src: url("exo_2-italic.ttf");
+	font-style: italic;
+}
+
+:root {
 	background: #000006 url("background.svg") 100% 100%;
+
+	color: #FFF;
+	font-family: "Exo 2", sans-serif;
+
+	--spacing: max(2vh, 2vw);
+}
+
+body {
+	width: 100vw;
+	min-height: 100vh;
+
+	box-sizing: border-box;
+	margin: 0;
+	padding: var(--spacing);
+
+	display: grid;
+	grid-template-rows: auto max-content;
+}
+
+main {
+	justify-self: center;
+	align-self: center;
+}
+
+footer {
+	align-self: end;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(512px, max-content));
+	gap: var(--spacing);
+	justify-content: center;
+	justify-items: center;
+}
+
+a:visited {
+	color: #00AAFF;
+}
+
+a {
+	color: #00AAFF;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
