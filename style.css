@@ -35,6 +35,12 @@ body {
 main {
 	justify-self: center;
 	align-self: center;
+
+	background: #FFFFFF08;
+	box-shadow: max(1vh, 1vw) max(1vh, 1vw) max(1vh, 1vw) #00003F3F;
+	border-radius: max(1vh, 1vw);
+	backdrop-filter: blur(3px);
+	padding: max(2vh, 2vw)
 }
 
 footer {
