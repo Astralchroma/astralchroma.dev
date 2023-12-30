@@ -62,6 +62,7 @@ section .shadow {
 	mask: linear-gradient(#000 0, #000 0) content-box, linear-gradient(#000 0, #000 0);
 	mask-composite: exclude;
 	transform: translateZ(-1px);
+	pointer-events: none;
 }
 
 @property --angle {
