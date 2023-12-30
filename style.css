@@ -17,7 +17,7 @@
 	color: #FFF;
 	font-family: "Exo 2", sans-serif;
 
-	--spacing: max(max(2vh, 2vw), 16px);
+	--spacing: min(max(max(2vh, 2vw), 16px), 32px);
 }
 
 body {
@@ -44,6 +44,37 @@ main {
 	padding: var(--spacing);
 }
 
+#description {
+	display: grid;
+}
+
+#accounts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min-content, 64px));
+	justify-content: center;
+	justify-items: center;
+	gap: var(--spacing);
+}
+
+@media (min-width: 1024px) {
+	main {
+		min-width: 768px;
+		max-width: 75%;
+	}
+
+	#description {
+		grid-template-columns: minmax(min-content, 768px) 192px;
+	}
+}
+
+.account img {
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: auto;
+	padding-bottom: 8px;
+}
+
 footer {
 	align-self: end;
 
@@ -53,7 +84,12 @@ footer {
 	align-items: center;
 }
 
-@media (min-width: 1024px) {
+#credit * {
+	display: block;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
 	footer {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -70,24 +106,4 @@ a {
 
 a:hover {
 	text-decoration: underline;
-}
-
-#accounts {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	justify-items: center;
-	gap: var(--spacing);
-}
-
-.account img {
-	display: block;
-	width: 32px;
-	height: 32px;
-	margin: auto;
-	padding-bottom: 8px;
-}
-
-#credit * {
-	display: block;
-	text-align: center;
 }
