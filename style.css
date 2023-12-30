@@ -39,12 +39,6 @@ main {
 	gap: 32px;
 }
 
-@media (min-width: 1024px) {
-	main {
-		min-width: 768px;
-	}
-}
-
 .group {
 	display: grid;
 	gap: 32px;
@@ -117,18 +111,6 @@ h1 {
 	padding-bottom: 8px;
 }
 
-@media (min-width: 1024px) {
-	header {
-		grid-template-columns: minmax(min-content, 768px) 196px;
-	}
-}
-
-@media (min-width: 768px) {
-	#projects {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
 footer {
 	align-self: end;
 
@@ -142,12 +124,6 @@ footer {
 	text-align: center;
 }
 
-@media (min-width: 768px) {
-	footer {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
 a:visited {
 	color: #00AAFF;
 }
@@ -159,4 +135,24 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+	header {
+		grid-template-columns: minmax(min-content, 768px) 196px;
+	}
+
+	main {
+		min-width: 768px;
+	}
+}
+
+@media (min-width: 768px) {
+	#projects {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	footer {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
