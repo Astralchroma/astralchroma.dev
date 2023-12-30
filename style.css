@@ -76,7 +76,6 @@ section .shadow::before {
 	inset: 0;
 	border-radius: 16px;
 	background: conic-gradient(
-		from 0deg,
 		hsl(360, 100%, 50%),
 		hsl(315, 100%, 50%),
 		hsl(270, 100%, 50%),
