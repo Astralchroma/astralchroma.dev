@@ -16,9 +16,6 @@
 
 	color: #FFF;
 	font-family: "Exo 2", sans-serif;
-
-	--big-space: min(max(max(2vh, 2vw), 16px), 32px);
-	--small-space: min(max(max(1vh, 1vw), 8px), 16px);
 }
 
 body {
@@ -27,11 +24,11 @@ body {
 
 	box-sizing: border-box;
 	margin: 0;
-	padding: var(--big-space);
+	padding: 32px;
 
 	display: grid;
 	grid-template-rows: auto max-content;
-	gap: var(--big-space);
+	gap: 32px;
 }
 
 main {
@@ -39,7 +36,7 @@ main {
 	align-self: center;
 
 	display: grid;
-	gap: var(--big-space);
+	gap: 32px;
 }
 
 @media (min-width: 1024px) {
@@ -50,16 +47,47 @@ main {
 
 .group {
 	display: grid;
-	gap: var(--big-space);
+	gap: 32px;
 }
 
 section {
+	position: relative;
+	transform-style: preserve-3d;
+
 	background: #FFFFFF08;
-	border: 1px solid #00007F7F;
-	box-shadow: 0 0 var(--small-space) #00007F7F;
-	border-radius: var(--small-space);
-	backdrop-filter: blur(4px);
-	padding: var(--small-space);
+	backdrop-filter: blur(2px);
+	padding: 16px;
+	border-radius: 16px;
+}
+
+section .shadow {
+	position: absolute;
+	inset: -4px;
+	border: 4px solid #0000;
+	border-radius: 20px;
+	mask: linear-gradient(#000 0, #000 0) content-box, linear-gradient(#000 0, #000 0);
+	mask-composite: exclude;
+	transform: translateZ(-1px);
+}
+
+section .shadow::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 16px;
+	background: conic-gradient(
+		from 0deg,
+		hsl(360, 100%, 50%),
+		hsl(315, 100%, 50%),
+		hsl(270, 100%, 50%),
+		hsl(225, 100%, 50%),
+		hsl(180, 100%, 50%),
+		hsl(135, 100%, 50%),
+		hsl(90, 100%, 50%),
+		hsl(45, 100%, 50%),
+		hsl(0, 100%, 50%)
+	);
+	filter: blur(4px);
 }
 
 h1 {
@@ -72,7 +100,7 @@ h1 {
 	justify-content: center;
 	justify-items: center;
 	align-items: center;
-	gap: var(--big-space);
+	gap: 32px;
 }
 
 .account img {
@@ -89,11 +117,6 @@ h1 {
 	}
 }
 
-#projects {
-	display: grid;
-	gap: var(--big-space);
-}
-
 @media (min-width: 768px) {
 	#projects {
 		grid-template-columns: 1fr 1fr;
@@ -104,7 +127,6 @@ footer {
 	align-self: end;
 
 	display: grid;
-	gap: var(--big-space);
 	justify-items: center;
 	align-items: center;
 }
