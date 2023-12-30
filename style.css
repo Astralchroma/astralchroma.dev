@@ -70,12 +70,19 @@ section .shadow {
 	transform: translateZ(-1px);
 }
 
+@property --angle {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0;
+}
+
 section .shadow::before {
 	content: "";
 	position: absolute;
 	inset: 0;
 	border-radius: 16px;
 	background: conic-gradient(
+		from var(--angle),
 		hsl(360, 100%, 50%),
 		hsl(315, 100%, 50%),
 		hsl(270, 100%, 50%),
