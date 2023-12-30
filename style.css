@@ -17,7 +17,7 @@
 	color: #FFF;
 	font-family: "Exo 2", sans-serif;
 
-	--spacing: min(max(max(2vh, 2vw), 16px), 32px);
+	--spacing: min(max(max(1vh, 1vw), 16px), 32px);
 }
 
 body {
@@ -37,10 +37,26 @@ main {
 	justify-self: center;
 	align-self: center;
 
+	display: grid;
+	gap: var(--spacing);
+}
+
+@media (min-width: 1024px) {
+	main {
+		min-width: 768px;
+	}
+}
+
+.group {
+	display: grid;
+	gap: var(--spacing);
+}
+
+section {
 	background: #FFFFFF08;
-	box-shadow: var(--spacing) var(--spacing) var(--spacing) #00003F3F;
+	box-shadow: 0 0 var(--spacing) #00003F7F;
 	border-radius: var(--spacing);
-	backdrop-filter: blur(3px);
+	backdrop-filter: blur(4px);
 	padding: var(--spacing);
 }
 
@@ -48,27 +64,13 @@ h1 {
 	text-align: center;
 }
 
-#description {
-	display: grid;
-}
-
 #accounts {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min-content, 64px));
 	justify-content: center;
 	justify-items: center;
+	align-items: center;
 	gap: var(--spacing);
-}
-
-@media (min-width: 1024px) {
-	main {
-		min-width: 768px;
-		max-width: 75%;
-	}
-
-	#description {
-		grid-template-columns: minmax(min-content, 768px) 192px;
-	}
 }
 
 .account img {
@@ -77,6 +79,12 @@ h1 {
 	height: 32px;
 	margin: auto;
 	padding-bottom: 8px;
+}
+
+@media (min-width: 1024px) {
+	header {
+		grid-template-columns: minmax(min-content, 768px) 256px;
+	}
 }
 
 #projects {
