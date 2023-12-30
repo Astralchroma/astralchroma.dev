@@ -44,6 +44,10 @@ main {
 	padding: var(--spacing);
 }
 
+h1 {
+	text-align: center;
+}
+
 #description {
 	display: grid;
 }
