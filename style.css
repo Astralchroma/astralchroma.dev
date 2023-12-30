@@ -17,7 +17,7 @@
 	color: #FFF;
 	font-family: "Exo 2", sans-serif;
 
-	--spacing: max(2vh, 2vw);
+	--spacing: max(max(2vh, 2vw), 16px);
 }
 
 body {
@@ -30,6 +30,7 @@ body {
 
 	display: grid;
 	grid-template-rows: auto max-content;
+	gap: var(--spacing);
 }
 
 main {
@@ -37,10 +38,10 @@ main {
 	align-self: center;
 
 	background: #FFFFFF08;
-	box-shadow: max(1vh, 1vw) max(1vh, 1vw) max(1vh, 1vw) #00003F3F;
-	border-radius: max(1vh, 1vw);
+	box-shadow: var(--spacing) var(--spacing) var(--spacing) #00003F3F;
+	border-radius: var(--spacing);
 	backdrop-filter: blur(3px);
-	padding: max(2vh, 2vw)
+	padding: var(--spacing);
 }
 
 footer {
