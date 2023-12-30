@@ -53,7 +53,7 @@ footer {
 	align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 	footer {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -70,4 +70,24 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+#accounts {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
+	gap: var(--spacing);
+}
+
+.account img {
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: auto;
+	padding-bottom: 8px;
+}
+
+#credit * {
+	display: block;
+	text-align: center;
 }
