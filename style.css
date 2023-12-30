@@ -79,6 +79,17 @@ h1 {
 	padding-bottom: 8px;
 }
 
+#projects {
+	display: grid;
+	gap: var(--spacing);
+}
+
+@media (min-width: 768px) {
+	#projects {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
 footer {
 	align-self: end;
 
