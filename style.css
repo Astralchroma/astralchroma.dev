@@ -112,6 +112,44 @@ h1 {
 	padding-bottom: 8px;
 }
 
+h3 {
+	display: inline-block;
+}
+
+.green-tag,.orange-tag,.blue-tag,.red-tag,.gray-tag {
+	width: max-content;
+	float: right;
+	border-radius: 8px;
+	padding: 4px 16px 4px 16px;
+	cursor: pointer;
+	margin-left: 16px;
+}
+
+.green-tag {
+	background: green;
+	border: 1px solid lightgreen;
+}
+
+.orange-tag {
+	background: orangered;
+	border: 1px solid orange;
+}
+
+.red-tag {
+	background: darkred;
+	border: 1px solid red;
+}
+
+.blue-tag {
+	background: darkblue;
+	border: 1px solid blue;
+}
+
+.gray-tag {
+	background: dimgray;
+	border: 1px solid lightgray;
+}
+
 footer {
 	align-self: end;
 
