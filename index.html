@@ -2,90 +2,99 @@
 <html lang="en">
 	<head>
 		<title>Astralchroma</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<style>
 			@font-face {
 				font-family: "Exo 2";
-				src: url("exo_2.ttf");
+				src: url("fonts/exo_2.ttf");
 				font-display: swap;
 			}
 
 			@font-face {
 				font-family: "Exo 2";
-				src: url("exo_2-italic.ttf");
+				src: url("fonts/exo_2-italic.ttf");
 				font-style: italic;
 				font-display: swap;
 			}
 
 			:root {
-				background: #000006 url("background.svg") 100% 100%;
-
+				background: #000006 url("images/background.svg") 100% 100%;
 				color: #FFF;
 				font-family: "Exo 2", sans-serif;
 			}
 
 			body {
-				width: 100vw;
-				min-height: 100vh;
-
-				box-sizing: border-box;
-				margin: 0;
-				padding: 32px;
-
 				display: grid;
-				grid-template-rows: auto max-content;
-				gap: 32px;
-			}
+				box-sizing: border-box;
 
-			main {
-				justify-self: center;
-				align-self: center;
-
+				padding: 32px;
+				margin: 0 auto 0 auto;
 				max-width: 1024px;
 
-				display: grid;
 				gap: 32px;
 			}
 
-			.group {
+			header {
 				display: grid;
 				gap: 32px;
+				align-content: start;
 			}
 
-			section {
-				background: #FFFFFF08;
-				backdrop-filter: blur(2px);
-				padding: 16px;
-				border-radius: 8px;
-				box-shadow: 0 0 16px #0000FF3F;
-				border: 1px solid #00007F3F;
-			}
-
-			h1 {
-				text-align: center;
-				margin-top: 0;
-			}
-
-			p {
-				margin: 0;
-			}
-
-			#accounts {
+			#name {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(min-content, 64px));
+				grid-template-columns: auto auto;
 				justify-content: center;
-				justify-items: center;
-				align-items: center;
-				gap: 32px;
+				column-gap: 8px;
+			}
+
+			#name h1 {
+				margin: 0;
+				align-content: center;
+			}
+
+			#social {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+				column-gap: 8px;
+				row-gap: 8px;
+			}
+
+			.account {
+				display: grid;
+				grid-template-columns: auto auto;
+				justify-content: center;
+				column-gap: 8px;
 			}
 
 			.account img {
-				display: block;
-				width: 32px;
-				height: 32px;
-				margin: auto;
-				padding-bottom: 8px;
+				width: 24px;
+				height: 24px;
+			}
+
+			main {
+				grid-row: span 2;
+			}
+
+			footer {
+				display: grid;
+				gap: 8px;
+				align-content: end;
+				text-align: center;
+				text-wrap: balance;
+			}
+
+			@media (min-width: 768px) and (min-height: 512px) {
+				body {
+					grid-template-columns: 300px auto;
+					overflow: hidden;
+					height: 100vh;
+				}
+
+				main {
+					overflow-y: scroll;
+				}
 			}
 
 			h3 {
@@ -127,20 +136,6 @@
 				border: 1px solid lightgray;
 			}
 
-			footer {
-				align-self: end;
-
-				display: grid;
-				justify-items: center;
-				align-items: center;
-				gap: 32px;
-			}
-
-			#credit * {
-				display: block;
-				text-align: center;
-			}
-
 			a:visited {
 				color: #00AAFF;
 			}
@@ -153,75 +148,52 @@
 			a:hover {
 				text-decoration: underline;
 			}
-
-			@media (min-width: 1024px) {
-				header {
-					grid-template-columns: minmax(min-content, auto) 196px;
-				}
-			}
-
-			@media (min-width: 768px) {
-				#projects {
-					grid-template-columns: 1fr 1fr;
-				}
-
-				footer {
-					grid-template-columns: repeat(3, 1fr);
-				}
-			}
 		</style>
 	</head>
 	<body>
-		<main>
-			<header class="group">
-				<section>
-					<h1>Astralchroma</h1>
-					<p>This page is a work in progress!</p>
-				</section>
-				<section id="accounts">
-					<a class="account" href="https://github.com/Astralchroma" target="_blank"><img src="icons/github.svg">GitHub</a>
-					<a class="account" href="https://youtube.com/@Astralchroma" target="_blank"><img src="icons/youtube.svg">YouTube</a>
-					<a class="account" href="https://solarscape.astralchroma.dev/discord" target="_blank"><img src="icons/discord.svg">Discord</a>
-					<a class="account" href="mailto:astralchroma@proton.me"><img src="icons/mail.svg">Email</a>
-				</section>
-			</header>
-			<div id="projects" class="group">
-				<section>
-					<h3>Solarscape</h3>
-					<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
-					<p>Multiplayer, Open World, Space Game inspired by Minecraft, Space Engineers, etc. Written in Rust, still extremely early in development.</p>
-				</section>
-				<section>
-					<h3>Autochroma</h3>
-					<div title="Smaller in scope, and less of a priority." class="blue-tag">Side-Project</div>
-					<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
-					<p>Custom, modular, private use Discord bot written in Rust.</p>
-				</section>
-				<section>
-					<h3>Aggregator</h3>
-					<div title="No longer developing or maintaining the project" class="red-tag">Discontinued</div>
-					<p>Simple Discord bot that forwards incoming published messages from multiple channels into a convenient single channel. Written primarily in Kotlin, although intended to be potentially rewritten in Rust at a later date.</p>
-				</section>
-				<section>
-					<h3>Ion</h3>
-					<div title="No longer developing or maintaining the project, it has been left to someone else" class="red-tag">Departed</div>
-					<p>A fork of Star Legacy's custom code intended for Horizon's End. Allows for server-side starships made up of blocks, complete with weapons and shields, along with other features such as factories, player gear, etc. Departed from role as Administrator / Lead Developer in May 2023.</p>
-				</section>
-				<section>
-					<h3>Doomstom</h3>
-					<div title="Short term project which was never intended to be used seriously or properly maintained, use at your own risk." class="gray-tag">Minor Project</div>
-					<p>Extremely hacky, unfinished, barely working, messy code that allows you to log into a Minecraft server (powered by Minestom) and play a Java port of Doom through the boss-bar.</p>
-				</section>
+		<header>
+			<div id="name"><img src="images/avatar.png" width="48px"><h1>Astralchroma</h1></div>
+			<div id="social">
+				<a class="account" href="https://github.com/Astralchroma" target="_blank"><img src="images/github.svg">GitHub</a>
+				<a class="account" href="https://youtube.com/@Astralchroma" target="_blank"><img src="images/youtube.svg">YouTube</a>
+				<a class="account" href="https://solarscape.astralchroma.dev/discord" target="_blank"><img src="images/discord.svg">Discord</a>
+				<a class="account" href="mailto:astralchroma@proton.me" target="_blank"><img src="images/mail.svg">Email</a>
 			</div>
+		</header>
+		<main id="projects" class="group">
+			<section>
+				<h3>Solarscape</h3>
+				<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
+				<p>Multiplayer, Open World, Space Game inspired by Minecraft, Space Engineers, etc. Written in Rust, still extremely early in development.</p>
+			</section>
+			<section>
+				<h3>Autochroma</h3>
+				<div title="Smaller in scope, and less of a priority." class="blue-tag">Side-Project</div>
+				<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
+				<p>Custom, modular, private use Discord bot written in Rust.</p>
+			</section>
+			<section>
+				<h3>Aggregator</h3>
+				<div title="No longer developing or maintaining the project" class="red-tag">Discontinued</div>
+				<p>Simple Discord bot that forwards incoming published messages from multiple channels into a convenient single channel. Written primarily in Kotlin, although intended to be potentially rewritten in Rust at a later date.</p>
+			</section>
+			<section>
+				<h3>Ion</h3>
+				<div title="No longer developing or maintaining the project, it has been left to someone else" class="red-tag">Departed</div>
+				<p>A fork of Star Legacy's custom code intended for Horizon's End. Allows for server-side starships made up of blocks, complete with weapons and shields, along with other features such as factories, player gear, etc. Departed from role as Administrator / Lead Developer in May 2023.</p>
+			</section>
+			<section>
+				<h3>Doomstom</h3>
+				<div title="Short term project which was never intended to be used seriously or properly maintained, use at your own risk." class="gray-tag">Minor Project</div>
+				<p>Extremely hacky, unfinished, barely working, messy code that allows you to log into a Minecraft server (powered by Minestom) and play a Java port of Doom through the boss-bar.</p>
+			</section>
 		</main>
 		<footer>
 			<a href="https://github.com/Astralchroma/astralchroma.dev" target="_blank">Report issues on GitHub</a>
 			&copy; Astralchroma 2024
-			<div id="credit">
-				<a href="https://fonts.google.com/specimen/Exo+2" target="_blank">Font "Exo 2" by Natanael Gama</a>
-				<a href="https://feathericons.com/" target="_blank">Mail Icon from Feather Icons</a>
-				<span>Brand icons are provided by their respective platforms</span>
-			</div>
+			<a href="https://fonts.google.com/specimen/Exo+2" target="_blank">Font "Exo 2" by Natanael Gama</a>
+			<a href="https://feathericons.com/" target="_blank">Mail Icon from Feather Icons</a>
+			<span>Brand icons are provided by their respective platforms</span>
 		</footer>
 	</body>
 </html>
