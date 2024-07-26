@@ -6,82 +6,71 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<style>
+			* { all: unset }
+			
 			@font-face {
 				font-family: "Exo 2";
 				src: url("fonts/exo_2-reduced.ttf");
-				font-display: swap;
 			}
 
 			@font-face {
 				font-family: "Exo 2";
-				src: url("fonts/exo_2-italic.ttf");
 				font-style: italic;
-				font-display: swap;
+				src: url("fonts/exo_2-italic.ttf");
 			}
 
 			:root {
-				background: #000006 url("images/background.svg") 100% 100%;
-
+				background: #000 url("images/background.svg") 100% 100%;
 				color: #FFF;
 				font-family: "Exo 2", sans-serif;
-				text-shadow: 0 0 24px #FFF;
 			}
 
-			html {
-				height: 100%;
-			}
+			html { height: 100% }
+			head { display: none }
 
 			body {
 				display: grid;
 				box-sizing: border-box;
-
+				max-width: 1024px;
 				padding: 16px;
 				margin: 0 auto 0 auto;
-				max-width: 1024px;
-
 				gap: 16px;
+				font-size: 16px;
 			}
 
 			header {
-				display: grid;
-				gap: 16px;
 				align-content: start;
+				display: grid;
+				gap: inherit;
+				justify-content: center;
 			}
 
 			#name {
-				display: grid;
-				grid-template-columns: auto auto;
+				align-items: center;
+				display: flex;
+				gap: 8px;
+			}
+
+			#accounts {
+				display: flex;
+				gap: 8px;
+				flex-wrap: wrap;
 				justify-content: center;
-				column-gap: 8px;
-			}
-
-			#name h1 {
-				margin: 0;
-				align-content: center;
-			}
-
-			#social {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-				column-gap: 8px;
-				row-gap: 8px;
 			}
 
 			.account {
-				display: grid;
-				grid-template-columns: auto auto;
-				justify-content: center;
-				column-gap: 8px;
+				align-items: center;
+				display: inline-flex;
+				gap: 4px;
 			}
 
 			.account img {
-				width: 24px;
 				height: 24px;
+				width: 24px;
 			}
 
-			main {
-				grid-row: span 2;
-			}
+			main { grid-row: span 2 }
+			main :first-child { margin-top: 0 }
 
 			footer {
 				display: grid;
@@ -96,26 +85,34 @@
 			@media (min-width: 768px) and (min-height: 384px) {
 				body {
 					gap: 32px;
-					padding: 32px;
-
 					grid-template-columns: 288px auto;
-					overflow: hidden;
 					height: 100%;
+					overflow: hidden;
+					padding: 32px;
 				}
 
-				header {
-					gap: 32px;
-				}
-
-				main {
-					overflow-y: scroll;
-				}
+				main { overflow-y: scroll }
 			}
 
-			h3 {
-				display: inline-block;
-				margin-top: 4px;
+			h1,h2,h3,p { display: block }
+
+			h1,h2 {
+				font-weight: bold;
+				font-weight: bold;
 			}
+
+			h2,h3 {
+				margin-bottom: 8px;
+				margin-top: 32px;
+			}
+
+			h1 { font-size: 32px }
+			h2 { font-size: 24px }
+			h3 { font-size: 20px }
+			p { margin-bottom: 16px }
+			i { font-style: italic }
+			a { color: #00AAFF }
+			a:hover { text-decoration: underline }
 
 			.green-tag,.orange-tag,.blue-tag,.red-tag,.gray-tag {
 				width: max-content;
@@ -150,32 +147,22 @@
 				background: dimgray;
 				border: 1px solid lightgray;
 			}
-
-			a:visited {
-				color: #00AAFF;
-			}
-
-			a {
-				color: #00AAFF;
-				text-decoration: none;
-			}
-
-			a:hover {
-				text-decoration: underline;
-			}
 		</style>
 	</head>
 	<body>
 		<header>
 			<div id="name"><img src="images/avatar.png" width="48px"><h1>Astralchroma</h1></div>
-			<div id="social">
-				<a class="account" href="https://github.com/Astralchroma" target="_blank"><img src="images/github.svg" width="24px">GitHub</a>
-				<a class="account" href="https://youtube.com/@Astralchroma" target="_blank"><img src="images/youtube.svg" width="24px">YouTube</a>
-				<!-- <a class="account" href="https://solarscape.astralchroma.dev/discord" target="_blank"><img src="images/discord.svg" height="24px">Discord</a> -->
-				<a class="account" href="mailto:astralchroma@proton.me" target="_blank"><img src="images/mail.svg" height="24px">Email</a>
+			<div id="accounts">
+				<a class="account" href="https://github.com/Astralchroma" target="_blank"><img src="images/github.svg">GitHub</a>
+				<a class="account" href="https://youtube.com/@Astralchroma" target="_blank"><img src="images/youtube.svg">YouTube</a>
+				<!-- <a class="account" href="https://solarscape.astralchroma.dev/discord" target="_blank"><img src="images/discord.svg">Discord</a> -->
+				<a class="account" href="mailto:astralchroma@proton.me" target="_blank"><img src="images/mail.svg">Email</a>
 			</div>
 		</header>
-		<main id="projects" class="group">
+		<main>
+			<h2>Hello there!</h2>
+			<p>There isn't a whole lot here yet. But there will be soon!</p>
+			<h2>Main Projects</h2>
 			<section>
 				<h3>Solarscape</h3>
 				<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
@@ -187,6 +174,8 @@
 				<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
 				<p>Custom, modular, private use Discord bot written in Rust.</p>
 			</section>
+			<h2>Other Projects</h2>
+			<p><i>Nothing of importance, borderline page filler.</i></p>
 			<section>
 				<h3>Aggregator</h3>
 				<div title="No longer developing or maintaining the project" class="red-tag">Discontinued</div>
