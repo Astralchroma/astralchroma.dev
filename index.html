@@ -85,7 +85,7 @@
 			@media (min-width: 768px) and (min-height: 384px) {
 				body {
 					gap: 32px;
-					grid-template-columns: 288px auto;
+					grid-template-columns: min-content auto;
 					height: 100%;
 					overflow: hidden;
 					padding: 32px;
@@ -118,9 +118,10 @@
 				width: max-content;
 				float: right;
 				border-radius: 8px;
-				padding: 4px 16px 4px 16px;
+				padding: 4px 8px 4px 8px;
 				cursor: pointer;
 				margin-left: 16px;
+				font-size: 14px;
 			}
 
 			.green-tag {
@@ -159,31 +160,29 @@
 			<p>There isn't a whole lot here yet. But there will be soon!</p>
 			<h2>Main Projects</h2>
 			<section>
-				<h3>Solarscape</h3>
-				<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
+				<h3>Solarscape<div title="Actively being developed and is a primary focus." class="green-tag">Active</div></h3>
 				<p>Multiplayer, Open World, Space Game inspired by Minecraft, Space Engineers, etc. Written in Rust, still extremely early in development.</p>
 			</section>
 			<section>
-				<h3>Autochroma</h3>
-				<div title="Smaller in scope, and less of a priority." class="blue-tag">Side-Project</div>
-				<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
+				<h3>
+					Autochroma
+					<div title="Smaller in scope, and less of a priority." class="blue-tag">Side-Project</div>
+					<div title="Actively being developed and is a primary focus." class="green-tag">Active</div>
+				</h3>
 				<p>Custom, modular, private use Discord bot written in Rust.</p>
 			</section>
 			<h2>Other Projects</h2>
 			<p><i>Nothing of importance, borderline page filler.</i></p>
 			<section>
-				<h3>Aggregator</h3>
-				<div title="No longer developing or maintaining the project" class="red-tag">Discontinued</div>
+				<h3>Aggregator<div title="No longer developing or maintaining the project" class="red-tag">Discontinued</div></h3>
 				<p>Simple Discord bot that forwards incoming published messages from multiple channels into a convenient single channel. Written primarily in Kotlin, although intended to be potentially rewritten in Rust at a later date.</p>
 			</section>
 			<section>
-				<h3>Ion</h3>
-				<div title="No longer developing or maintaining the project, it has been left to someone else" class="red-tag">Departed</div>
+				<h3>Ion<div title="No longer developing or maintaining the project, it has been left to someone else" class="red-tag">Departed</div></h3>
 				<p>A fork of Star Legacy's custom code intended for Horizon's End. Allows for server-side starships made up of blocks, complete with weapons and shields, along with other features such as factories, player gear, etc. Departed from role as Administrator / Lead Developer in May 2023.</p>
 			</section>
 			<section>
-				<h3>Doomstom</h3>
-				<div title="Short term project which was never intended to be used seriously or properly maintained, use at your own risk." class="gray-tag">Minor Project</div>
+				<h3>Doomstom<div title="Short term project which was never intended to be used seriously or properly maintained, use at your own risk." class="gray-tag">Minor Project</div></h3>
 				<p>Extremely hacky, unfinished, barely working, messy code that allows you to log into a Minecraft server (powered by Minestom) and play a Java port of Doom through the boss-bar.</p>
 			</section>
 		</main>
